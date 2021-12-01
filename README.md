@@ -33,7 +33,7 @@ The modules are separated by layers, respecting SOLID:
 
 - App Module houses the activites, in a bigger project we could create a module for each feature
 
-- Presentation Module is responsible for exposing data wrapped in entities that users observe via a LiveData in the ViewModel class.
+- Presentation Module is responsible for exposing data wrapped in entities that UI collects via a sharedFlow in the ViewModel class.
 
 - Domain Module: This has the Domain Module which contains the usecase responsible for enclosing a particular task, repository interfaces, and entities. 
 
