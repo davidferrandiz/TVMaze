@@ -26,9 +26,9 @@ class ShowsViewModel @Inject constructor(
     private val feedbackCreator: FeedbackCreator,
 ) : ViewModel() {
 
-    private val _showsStateFlow =
+    private val _showsSharedFlow =
         MutableSharedFlow<PagingData<ShowListItem>>()
-    val showsStateFlow = _showsStateFlow.asSharedFlow()
+    val showsStateFlow = _showsSharedFlow.asSharedFlow()
 
     private val _showDetailsFlow = MutableSharedFlow<Resource<ShowDetailUI>>()
     val showDetailsFlow = _showDetailsFlow.asSharedFlow()
@@ -40,7 +40,7 @@ class ShowsViewModel @Inject constructor(
                 .map {
                     it.map { value -> value.toUI() }
                 }.collect {
-                    _showsStateFlow.emit(it)
+                    _showsSharedFlow.emit(it)
                 }
         }
     }

@@ -123,7 +123,9 @@ class ListActivity : AppCompatActivity() {
 
     private fun showErrorView(exception: Exception = Exception()) {
         val error = viewModel.getErrorMessage(exception)
-        binding.genericFeedbackView.populate(error, { showsAdapter.retry() })
+        binding.genericFeedbackView.populate(error, {
+            showsAdapter.retry()
+        })
         binding.refreshLayout.hide()
     }
 
