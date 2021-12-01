@@ -41,6 +41,4 @@ The modules are separated by layers, respecting SOLID:
 
 - Core module: This is divided in two submodules: One for dependency injection and other for the setup of room and api.
 
-- Common module: In this module we will house some utils that will be useful in the whole project
-
 ![alt text](https://koenig-media.raywenderlich.com/uploads/2019/06/Clean-Architecture-graph.png)
