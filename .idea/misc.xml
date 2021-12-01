@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/david/Desktop/Android/DavidFerrandizZinio/common/src/main/res/layout/compound_default_message.xml" value="0.23177083333333334" />
+        <entry key="..\:/Users/david/Desktop/Android/DavidFerrandizZinioModuleFinal/DavidFerrandizZinio/common/src/main/res/layout/compound_default_message.xml" value="0.146875" />
+        <entry key="..\:/Users/david/Desktop/TVMaze/app/src/main/res/layout-land/activity_character_details.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/david/Desktop/TVMaze/app/src/main/res/layout-land/activity_show_details.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/david/Desktop/TVMaze/app/src/main/res/layout/aaaaa.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/david/Desktop/TVMaze/app/src/main/res/layout/activity_character_details.xml" value="0.171875" />
+        <entry key="..\:/Users/david/Desktop/TVMaze/app/src/main/res/layout/activity_list.xml" value="0.264" />
+        <entry key="..\:/Users/david/Desktop/TVMaze/app/src/main/res/layout/activity_show_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/david/Desktop/TVMaze/app/src/main/res/layout/show_row.xml" value="0.264" />
+        <entry key="..\:/Users/david/Desktop/TVMaze/app/src/main/res/menu/character_list_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

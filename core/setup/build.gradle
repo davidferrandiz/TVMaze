@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "MARVEL_PUBLIC_KEY", "\"8e6e6bd3f75323b87dbbf0067a8a8460\""
+            buildConfigField "String", "MARVEL_PRIVATE_KEY", "\"9f9858b8de764df66e40c22cdd8e59def9353ea9\""
+        }
+
+        debug {
+            buildConfigField "String", "MARVEL_PUBLIC_KEY", "\"8e6e6bd3f75323b87dbbf0067a8a8460\""
+            buildConfigField "String", "MARVEL_PRIVATE_KEY", "\"9f9858b8de764df66e40c22cdd8e59def9353ea9\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    //Module
+    implementation project(path: ':domain')
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // Dagger - Hilt
+    implementation 'com.google.dagger:hilt-android:2.39.1'
+    kapt 'com.google.dagger:hilt-android-compiler:2.39.1'
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+
+    //Paging3
+    implementation 'androidx.paging:paging-runtime-ktx:3.1.0'
+}
