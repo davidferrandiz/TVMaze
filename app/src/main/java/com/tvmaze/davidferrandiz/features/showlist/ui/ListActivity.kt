@@ -2,7 +2,6 @@ package com.tvmaze.davidferrandiz.features.showlist.ui
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -11,15 +10,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.davidferrandiz.presentation.exceptions.mapper.handleExceptions
-import com.davidferrandiz.presentation.uidata.utils.FeedbackCreator
 import com.davidferrandiz.presentation.uidata.utils.Resource
 import com.davidferrandiz.presentation.vm.ShowsViewModel
 import com.tvmaze.davidferrandiz.R
 import com.tvmaze.davidferrandiz.databinding.ActivityListBinding
 import com.tvmaze.davidferrandiz.features.showdetail.ui.ShowDetailsActivity
 import com.tvmaze.davidferrandiz.features.showlist.ui.adapter.ShowsAdapter
-import com.tvmaze.davidferrandiz.utils.views.GenericFeedbackView
 import com.tvmaze.davidferrandiz.utils.views.hide
 import com.tvmaze.davidferrandiz.utils.views.show
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,7 +24,6 @@ import kotlinx.android.synthetic.main.activity_list.view.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class ListActivity : AppCompatActivity() {
@@ -102,13 +97,13 @@ class ListActivity : AppCompatActivity() {
             recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                     super.onScrollStateChanged(recyclerView, newState)
-                    binding.floatingActionButton.isVisible = recyclerView.canScrollVertically(-1)
+                    floatingActionButton.isVisible = recyclerView.canScrollVertically(-1)
                 }
             })
 
             floatingActionButton.setOnClickListener {
+                floatingActionButton.isVisible = false
                 recycler.scrollToPosition(0)
-                floatingActionButton.hide()
             }
         }
     }
@@ -123,9 +118,7 @@ class ListActivity : AppCompatActivity() {
 
     private fun showErrorView(exception: Exception = Exception()) {
         val error = viewModel.getErrorMessage(exception)
-        binding.genericFeedbackView.populate(error, {
-            showsAdapter.retry()
-        })
+        binding.genericFeedbackView.populate(error, { showsAdapter.retry() })
         binding.refreshLayout.hide()
     }
 
